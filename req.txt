@@ -36,7 +36,7 @@ Flask==2.1.2
 Flask-SQLAlchemy==2.5.1
 flatbuffers==1.12
 fonttools==4.31.2
-gast==0.5.3
+gast==0.4.0
 google-auth==2.6.2
 google-auth-oauthlib==0.4.6
 google-pasta==0.2.0
@@ -157,11 +157,12 @@ SQLAlchemy==1.4.37
 srsly==2.4.3
 stack-data==0.2.0
 tenacity==8.0.1
-tensorboard==2.8.0
+tensorboard==2.9.1
 tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.1
 tensorflow==2.8.0
 tensorflow-addons==0.17.0
+tensorflow-cpu==2.9.1
 tensorflow-estimator==2.9.0
 tensorflow-hub==0.12.0
 tensorflow-io-gcs-filesystem==0.24.0
