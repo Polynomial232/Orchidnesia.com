@@ -7,5 +7,9 @@ app = Flask(__name__)
 def home():
     return 'Hello, World!'
 
+@app.route('/login')
+def login():
+    return 'INI HALAMAN LOGIN'
+
 if __name__ == '__main__':
     app.run()
