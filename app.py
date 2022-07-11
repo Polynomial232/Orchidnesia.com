@@ -1,7 +1,7 @@
 from classList import readFile
 
 from flask import Flask, render_template, request
-from tensorflow import keras
+#from tensorflow import keras
 import numpy as np 
 import cv2
 import matplotlib.pyplot as plt
@@ -13,7 +13,7 @@ hostname = socket.gethostname()
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 1
 
-MODEL = keras.models.load_model('model.h5')
+#MODEL = keras.models.load_model('model.h5')
 CLASS = readFile()
 
 def pred(FILE):
