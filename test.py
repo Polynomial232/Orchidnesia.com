@@ -1,6 +1,9 @@
-from classList import readFile
+from classList import readFile, pred
 
 from flask import Flask, render_template, request
+import numpy as np 
+import cv2
+import matplotlib.pyplot as plt
 import socket
 
 hostname = socket.gethostname()
