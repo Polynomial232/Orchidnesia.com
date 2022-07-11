@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@300&display=swap');
+
+:root{
+    --main-color: #2b0c6b;
+    --second-color: #a76dff;
+    --main-font: 'Arima', cursive;
+    --second-font: 'Roboto';
+} 
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.logo-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.logo-center img {
+    min-width: 15em;
+    max-width: 15em;
+}
+
+.logo-center h1 {
+    margin-top: 1em;
+    color: var(--second-color);
+    font-family: var(--main-font);
+}
+
+.loop-spin {
+    background: transparent;
+    animation-name: spin;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+h1 {
+    font-family: var(--main-font);
+}
+
+p{
+    font-family: var(--second-font);
+    text-align: justify;
+
+}
+
+span:hover {
+    transform: scale(110%);
+    transition: .2s ease-in-out;
+    cursor: pointer;
+}
+
+.image-upload>input[type=file] {
+    display: none;
+}
+
+.image-upload>h1 {
+    text-align: center;
+}
+
+.image-upload>label>img {
+    border: 2px solid var(--main-color);
+    width: 30em;
+    height: 15em;
+    object-fit: cover;
+    margin: 1em 0;
+}
+
+.image-upload {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.btn-cari {
+    background: none;
+    border: 2px solid var(--main-color);
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+    color: var(--main-color);
+    text-transform: capitalize;
+    font-size: 1.1em;
+    transition: .2s ease-in-out;
+}
+
+a.btn-cari {
+    text-decoration: none;
+    font-family: var(--second-font);
+    color: var(--main-color);
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.btn-cari:hover {
+    background: var(--main-color);
+    color: white;
+    transform: translateY(-10%);
+    cursor: pointer;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}

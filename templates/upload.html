@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    
+    <link rel="stylesheet" href="{{  url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{  url_for('static', filename='Logo.png') }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+    <style>
+        body::before {
+            content: '';
+            position: absolute;
+            height: 100vh;
+            width: 100%;
+            background: url("https://img2.goodfon.com/wallpaper/nbig/1/7e/orchid-orkhidei-tsvetenie.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            opacity: 0.04;
+            z-index: -1;
+        }
+
+        body {
+            overflow: hidden;
+            z-index: 999;
+            animation-name: gone;
+            animation-duration: 2s;
+            transition: 1s;
+        }
+
+        label {
+            position: relative;
+        }
+
+        img {
+            background-color: #9F8CC1;
+        }
+
+        i {
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            color: white;
+            font-size: 5em;
+            transform: translate(50%, -50%);
+            transition: .2s ease-in-out;
+        }
+
+        label:hover>i,
+        .over {
+            animation-name: bounce;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes bounce {
+            0% {
+                top: 50%
+            }
+            50% {
+                top: 53%
+            }
+            100% {
+                top: 50%
+            }
+        }
+
+        @keyframes gone {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/prediction" class="dropzone" id="my-great-dropzone" enctype="multipart/form-data" method="post">
+        <div class="image-upload">
+            <h1>Upload gambar anggrekmu disini</h1>
+            <label for="file-input" id="drop-area">
+                <img src="" id="img" />
+                <i class="fa-solid fa-file-arrow-down" id="icon"></i>
+            </label>
+
+            <input id="file-input" type="file" name="file1" onchange="" multiple accept="image/*" onchange="handleFiles(this.files)">
+
+            <input type="submit" value="Cari Tahu Jenisnya!" class="btn-cari">
+        </div>
+    </form>
+
+    <script>
+        const trans = setTimeout(() => {
+            document.getElementsByTagName("body")[0].style.background = "#9F8CC1";
+        }, 500);
+
+        function changeImage(IMAGE){
+            console.log(window.URL.createObjectURL(IMAGE));
+            document.getElementById("img").src = window.URL.createObjectURL(IMAGE)
+            document.getElementById("icon").style.display = "none";
+        }
+        
+        document.getElementById("file-input").onchange = function change(e) {
+            changeImage(this.files[0])
+        }
+        
+        DROPBOX = document.getElementById("drop-area");
+        
+        DROPBOX.addEventListener("dragenter", (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+        }, false);
+
+        DROPBOX.addEventListener("dragover", (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+            document.getElementById("icon").classList.add("over")
+        }, false);
+
+        DROPBOX.addEventListener("dragleave", (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+            document.getElementById("icon").classList.remove("over")
+        }, false);
+
+        DROPBOX.addEventListener("drop", (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+
+            const dt = e.dataTransfer;
+            const files = dt.files;
+
+            changeImage(files[0])
+        }, false);
+
+        function beforePage(){
+            window.location.href = "index.html"
+        }
+    </script>
+</body>
+
+</html>

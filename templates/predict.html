@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+
+    <link rel="stylesheet" href="{{  url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{  url_for('static', filename='Logo.png') }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+    <style>
+        body::before {
+            content: '';
+            position: absolute;
+            height: 100vh;
+            width: 100%;
+            background: url("https://img2.goodfon.com/wallpaper/nbig/1/7e/orchid-orkhidei-tsvetenie.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            opacity: 0.04;
+            z-index: -1;
+        }
+
+        body {
+            overflow: hidden;
+            z-index: 999;
+            background-color: #9F8CC1;
+        }
+
+        .get-predict {
+            display: flex;
+            width: 65%;
+            background-color: white;
+            border-radius: 10px;
+            padding: 2em;
+        }
+
+        .description {
+            display: flex;
+            flex-direction: column;
+            padding: 1em 3em;
+            gap: 1em;
+        }
+        .centers {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="centers">
+        <div class="get-predict">
+            <img src="{{  url_for('static', filename='temp_file_'+data.hostname+'.jpg') }}" id="img" />
+    
+            <div class="description">
+                <h1>{% print(data.pred) %}</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut facilis sed quibusdam, adipisci ex sapiente
+                    tenetur blanditiis fuga quo mollitia. Dolorem vero, consequuntur accusamus repellat voluptatem
+                    accusantium dolor recusandae suscipit rerum sed debitis obcaecati maxime rem porro incidunt! Quaerat,
+                    impedit?</p>
+                <a href="/upload" class="btn-cari">Cari Tahu Yang Lain!</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

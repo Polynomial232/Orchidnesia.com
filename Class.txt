@@ -1,0 +1,71 @@
+Alexandrite
+Almandine
+Amazonite
+Amber
+Amethyst
+Ametrine
+Andalusite
+Andradite
+Aquamarine
+Aventurine Green
+Benitoite
+Bixbite
+Bloodstone
+Carnelian
+Cats Eye
+Chalcedony
+Chrysoberyl
+Chrysocolla
+Chrysoprase
+Citrine
+Coral
+Danburite
+Diamond
+Diaspore
+Dumortierite
+Emerald
+Fluorite
+Garnet Red
+Goshenite
+Grossular
+Hessonite
+Hiddenite
+Iolite
+Jade
+Jasper
+Kunzite
+Kyanite
+Labradorite
+Lapis Lazuli
+Larimar
+Malachite
+Moonstone
+Morganite
+Opal
+Pearl
+Peridot
+Prehnite
+Pyrite
+Pyrope
+Rhodochrosite
+Rhodolite
+Rhodonite
+Ruby
+Sapphire Blue
+Scapolite
+Serpentine
+Sodalite
+Spessartite
+Sphene
+Spinel
+Spodumene
+Sunstone
+Tanzanite
+Tigers Eye
+Topaz
+Tourmaline
+Tsavorite
+Turquoise
+Variscite
+Zircon
+Zoisite
