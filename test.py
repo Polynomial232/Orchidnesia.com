@@ -21,7 +21,7 @@ def prediction():
     FILE = request.files['file1']
     FILE.save('static/temp_file_'+hostname+'.jpg')
     DATA = {
-        'hostname': 'hostname',
+        'hostname': hostname,
         'pred': 'test'
     }
 
