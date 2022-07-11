@@ -1,7 +1,7 @@
 from classList import readFile
 
 from flask import Flask, render_template, request
-#from tensorflow import keras
+from tensorflow import keras
 import numpy as np 
 import cv2
 import matplotlib.pyplot as plt
