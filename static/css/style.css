@@ -57,7 +57,7 @@ span:hover {
 }
 
 .image-upload>input[type=file] {
-    display: none;
+    /* display: none; */
 }
 
 .image-upload>h1 {

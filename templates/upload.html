@@ -48,7 +48,7 @@
                 <i class="fa-solid fa-file-arrow-down" id="icon"></i>
             </label>
 
-            <input id="file-input" type="file" name="file1" onchange="" multiple accept="image/*" onchange="handleFiles(this.files)">
+            <input id="file-input" type="file" name="file1" onchange="" accept="image/*" onchange="handleFiles(this.files)">
 
             <input type="submit" value="Cari Tahu Jenisnya!" class="btn-cari">
         </div>
@@ -56,45 +56,47 @@
 
     <script>
         const trans = setTimeout(() => {
-            document.getElementsByTagName("body")[0].style.background = "#9F8CC1";
-        }, 500);
+            document.getElementsByTagName("body")[0].style.background = "#9F8CC1"
+        }, 500)
 
         function changeImage(IMAGE){
-            console.log(window.URL.createObjectURL(IMAGE));
+            console.log(document.querySelector('input[type="file"]').files)
+            // console.log(IMAGE)
             document.getElementById("img").src = window.URL.createObjectURL(IMAGE)
-            document.getElementById("icon").style.display = "none";
+            document.getElementById("icon").style.display = "none"
         }
         
         document.getElementById("file-input").onchange = function change(e) {
             changeImage(this.files[0])
         }
         
-        DROPBOX = document.getElementById("drop-area");
+        DROPBOX = document.getElementById("drop-area")
         
         DROPBOX.addEventListener("dragenter", (e) => {
-            e.stopPropagation();
-            e.preventDefault();
-        }, false);
+            e.stopPropagation()
+            e.preventDefault()
+        }, false)
 
         DROPBOX.addEventListener("dragover", (e) => {
-            e.stopPropagation();
-            e.preventDefault();
+            e.stopPropagation()
+            e.preventDefault()
             document.getElementById("icon").classList.add("over")
-        }, false);
+        }, false)
 
         DROPBOX.addEventListener("dragleave", (e) => {
-            e.stopPropagation();
-            e.preventDefault();
+            e.stopPropagation()
+            e.preventDefault()
             document.getElementById("icon").classList.remove("over")
-        }, false);
+        }, false)
 
         DROPBOX.addEventListener("drop", (e) => {
-            e.stopPropagation();
-            e.preventDefault();
+            e.stopPropagation()
+            e.preventDefault()
 
-            const dt = e.dataTransfer;
-            const files = dt.files;
+            const dt = e.dataTransfer
+            const files = dt.files
 
+            document.querySelector('input[type="file"]').files = files
             changeImage(files[0])
         }, false);
 
