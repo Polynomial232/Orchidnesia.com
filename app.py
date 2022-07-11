@@ -12,7 +12,7 @@ hostname = socket.gethostname()
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 1
 
-#MODEL = keras.models.load_model('model.h5')
+MODEL = keras.models.load_model('model.h5')
 CLASS = readFile()
 
 def pred(FILE):
